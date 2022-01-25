@@ -1,0 +1,267 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap");
+
+:root {
+	--nav-width: 15%;
+	--nav-height: 100vh;
+	--max-nav-width: 15%;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Roboto", sans-serif;
+}
+.App {
+	max-width: 100vw;
+}
+.navbar {
+	width: var(--nav-width);
+	max-width: var(--max-nav-width);
+	position: fixed;
+	height: var(--nav-height);
+	padding: 1rem 0;
+	background-color: #131416;
+	display: flex;
+	flex-direction: column;
+	border-right: 3px solid #191d20;
+	border-right-style: ridge;
+}
+.navbar .logo {
+	color: #fff;
+	font-size: 1.3rem;
+	margin-bottom: 2rem;
+	padding-left: 2rem;
+}
+.navbar .nav-links {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+}
+.navbar .nav-links .link {
+	width: 100%;
+	color: #fff;
+	display: flex;
+	align-items: center;
+	text-decoration: none;
+	padding: 0.25rem 0 0.25rem 2rem;
+	margin: 0.125rem 0;
+}
+.navbar .nav-links .link .link-icon {
+	margin-right: 0.5rem;
+}
+.navbar .nav-links .link:hover {
+	color: #ffffffb3;
+}
+.navbar .user-sec {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0.5rem 2rem;
+	padding-top: 1rem;
+	border-top: 3px solid #191d20;
+	border-top-style: ridge;
+}
+.navbar .user-sec .avatar {
+	width: 40px;
+	height: 40px;
+	border: 2px solid #eee;
+	border-radius: 50%;
+}
+.navbar .user-sec .username,
+.user-desc {
+	font-size: 0.8rem;
+	color: #fff;
+}
+.user-desc {
+	color: #ffffff80;
+}
+.route-component {
+	margin-left: var(--max-nav-width);
+	min-height: var(--nav-height);
+	width: calc(100% - var(--nav-width));
+	background-color: #191d20;
+	color: #fff;
+}
+.header {
+	width: 100%;
+	display: flex;
+	padding: 1rem;
+	background-color: #131416;
+	border-bottom: 3px solid #191d20;
+	border-bottom-style: ridge;
+}
+.header .heading {
+	flex: 1;
+}
+.header .operations {
+	display: flex;
+}
+.header .operations .input-icon {
+	position: relative;
+}
+.header .operations .input-icon .icon {
+	position: absolute;
+	z-index: 2;
+	color: #fff;
+	top: 50%;
+	left: 0.5rem;
+	transform: translateY(-50%);
+}
+.header .operations .input-icon .search-field {
+	border: 1px solid #23282c;
+	outline: none;
+	height: 100%;
+	margin-right: 1rem;
+	min-width: 225px;
+	background-color: #191d20;
+	padding: 0.5rem 0.5rem 0.5rem 2rem;
+	border-radius: 0.5rem;
+	color: #fff;
+}
+.header .operations .input-icon .search-field:focus {
+	border-color: #6f7479;
+}
+.header .operations .add-new {
+	background-color: #046ce7;
+	padding: 0.5rem 1rem;
+	color: #fff;
+	border: 1px solid #046ce7;
+	outline: none;
+	border-radius: 0.5rem;
+	cursor: pointer;
+}
+.header .operations .add-new:hover {
+	background-color: #046ae7b3;
+}
+.header .operations .add-new:focus {
+	border-color: #eee;
+}
+.header .operations .add-new .add-icon {
+	margin-right: 0.25rem;
+}
+
+.tasks {
+	margin: 1rem;
+	margin-bottom: 0;
+	padding-bottom: 1rem;
+	display: flex;
+}
+.tasks .pending {
+	width: 25rem;
+	margin-right: 1rem;
+}
+.tasks .pending .header {
+	background-color: #191d20;
+	border: none;
+	display: flex;
+	align-items: center;
+}
+.tasks .pending .header .add-task {
+	background-color: transparent;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	color: #fff;
+	padding: 0.5rem;
+	display: flex;
+	align-items: center;
+}
+.tasks .pending .header .add-task:hover {
+	background-color: #23282c;
+}
+
+.tasks .pending .task-list {
+	padding: 0 1rem;
+}
+
+.task {
+	background-color: #131416;
+	margin-bottom: 0.75rem;
+	padding: 0.75rem;
+	border: 2px solid #23282c;
+	border-radius: 0.5rem;
+}
+.task:last-child {
+	margin-bottom: 0;
+}
+.task .task-heaeder {
+	display: flex;
+	margin-bottom: 0.75rem;
+}
+.task .task-heaeder .menu-submenu {
+	position: relative;
+}
+.task .task-heaeder .menu-submenu .submenu {
+	position: absolute;
+	z-index: 5;
+	top: 110%;
+	left: -100%;
+	background: #1e2022;
+	padding: 0.25rem 0;
+	border: 0.25rem;
+	box-shadow: 0px 0px 4px 1px rgb(255 255 255 / 20%);
+}
+.task .task-heaeder .menu-submenu .submenu .action {
+	width: 100%;
+	border: 1px solid #131416;
+	outline: none;
+	padding: 0.35rem 0.75rem;
+	color: #fff;
+	background-color: #131416;
+	cursor: pointer;
+	text-align: left;
+}
+.task .task-heaeder .menu-submenu .submenu .action:hover {
+	background-color: #1e2022;
+}
+.task .task-heaeder .menu-submenu .submenu .task-done:hover {
+	background-color: #268826;
+}
+.task .task-heaeder .menu-submenu .submenu .delete:hover {
+	background-color: #c43030;
+}
+.task .task-heaeder .menu {
+	border: none;
+	outline: none;
+	width: 2rem;
+	height: 2rem;
+	color: #fff;
+	background-color: transparent;
+	border-radius: 50%;
+	font-size: 1.2rem;
+	cursor: pointer;
+}
+.task .task-heaeder .menu:hover {
+	background-color: #23282c;
+}
+.task .task-heaeder .title {
+	flex: 1;
+	display: flex;
+	align-items: center;
+}
+.task .task-heaeder .title .task-icon {
+	margin-right: 1rem;
+}
+.task .time {
+	color: #6f7479;
+	font-size: 0.8rem;
+	text-align: right;
+	margin-right: 1rem;
+}
+
+.no-data {
+	margin: 1rem;
+	min-height: 40vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.no-data .no-data-icon {
+	font-size: 3rem;
+}
+.no-data .no-data-text {
+	margin-top: 1rem;
+}
