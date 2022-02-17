@@ -219,6 +219,9 @@
 .task .task-heaeder .menu-submenu .submenu .task-done:hover {
 	background-color: #268826;
 }
+.task .task-heaeder .menu-submenu .submenu .task-notdone:hover {
+	background-color: #aa9d29;
+}
 .task .task-heaeder .menu-submenu .submenu .delete:hover {
 	background-color: #c43030;
 }
@@ -264,4 +267,44 @@
 }
 .no-data .no-data-text {
 	margin-top: 1rem;
+}
+
+.notfound {
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.notfound .img404 {
+	width: 60%;
+	height: 60%;
+}
+.notfound .message {
+	text-align: center;
+	line-height: 1.8rem;
+}
+.notfound .goback {
+	margin-top: 1rem;
+	padding: 0.75rem 1.5rem;
+	background-color: #eee;
+	border-radius: 5rem;
+	font-weight: 500;
+	text-decoration: none;
+	color: #131416;
+	-webkit-tap-highlight-color: transparent;
+	box-shadow: 0px 15px 20px rgba(#36184f, 0.5);
+	transition: all 0.3s ease;
+}
+
+.notfound .goback:hover {
+	box-shadow: 0px 10px 10px -10px rgba(#36184f, 0.5);
+	transform: translateY(1px);
+	background: linear-gradient(
+		90deg,
+		rgba(79, 84, 90, 0.5) 0%,
+		rgba(43, 45, 49, 0.8) 100%
+	);
+	color: #fff;
 }

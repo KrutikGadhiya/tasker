@@ -6,7 +6,15 @@ import {
 	BsThreeDotsVertical,
 } from "react-icons/bs";
 
-const Task = ({ title, isCompleted, time }) => {
+const Task = ({
+	id,
+	title,
+	isCompleted,
+	time,
+	deleteTask,
+	markInComplete,
+	markComplete,
+}) => {
 	const [isOpen, setIsOpen] = useState(false);
 	const ref = useRef(null);
 	const isWeekDiff = moment(time).isBefore(
@@ -49,8 +57,18 @@ const Task = ({ title, isCompleted, time }) => {
 					{isOpen && (
 						<div ref={ref} className="submenu">
 							<button className="action">Edit</button>
-							<button className="action task-done">Completed</button>
-							<button className="action delete">Delete</button>
+							<button
+								className={
+									!isCompleted ? "action task-done" : "action task-notdone"
+								}
+								onClick={() =>
+									!isCompleted ? markComplete(id) : markInComplete(id)
+								}>
+								{!isCompleted ? "Completed" : "Incomplete"}
+							</button>
+							<button onClick={() => deleteTask(id)} className="action delete">
+								Delete
+							</button>
 						</div>
 					)}
 				</div>

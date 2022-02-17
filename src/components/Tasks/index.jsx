@@ -29,6 +29,27 @@ const Tasks = () => {
 		setCTask(filteredData);
 	}, [completedTaskList, searchTerm]);
 
+	const deleteTask = (id) => {
+		setTaskList(tasks.filter((task) => task.id !== id));
+	};
+	const deleteCTask = (id) => {
+		setCompletedTTaskList(cTask.filter((task) => task.id !== id));
+	};
+	const markAsCompleted = (id) => {
+		setCTask([
+			...cTask,
+			{ ...tasks.find((task) => task.id === id), isCompleted: true },
+		]);
+		setTasks(tasks.filter((task) => task.id !== id));
+	};
+	const markAsInCompleted = (id) => {
+		setTasks([
+			...tasks,
+			{ ...cTask.find((task) => task.id === id), isCompleted: false },
+		]);
+		setCTask(cTask.filter((task) => task.id !== id));
+	};
+
 	return (
 		<>
 			<Header
@@ -48,12 +69,15 @@ const Tasks = () => {
 					</div>
 					<div className="task-list">
 						{tasks.length ? (
-							tasks.map((tsk, i) => (
+							tasks.map((tsk) => (
 								<Task
 									isCompleted={tsk.isCompleted}
 									title={tsk.title}
 									time={tsk.time.toLocaleString()}
-									key={i}
+									key={tsk.id}
+									id={tsk.id}
+									deleteTask={deleteTask}
+									markComplete={markAsCompleted}
 								/>
 							))
 						) : (
@@ -70,12 +94,15 @@ const Tasks = () => {
 					</div>
 					<div className="task-list">
 						{cTask.length ? (
-							cTask.map((tsk, i) => (
+							cTask.map((tsk) => (
 								<Task
 									isCompleted={tsk.isCompleted}
 									title={tsk.title}
 									time={tsk.time.toLocaleString()}
-									key={i}
+									key={tsk.id}
+									id={tsk.id}
+									deleteTask={deleteCTask}
+									markInComplete={markAsInCompleted}
 								/>
 							))
 						) : (

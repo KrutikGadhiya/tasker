@@ -1,6 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { RiHomeLine } from "react-icons/ri";
+// import { RiHomeLine } from "react-icons/ri";
 import { FaRegCheckCircle } from "react-icons/fa";
 import { FiMessageSquare } from "react-icons/fi";
 import { IoAnalytics, IoNotificationsOutline } from "react-icons/io5";
@@ -17,16 +17,16 @@ const Navbar = () => {
 				<p>Tasker</p>
 			</div>
 			<div className="nav-links">
-				<NavLink
+				{/* <NavLink
 					className="link"
 					style={({ isActive }) => (isActive ? activeNav : undefined)}
 					to={"/"}>
 					<RiHomeLine className="link-icon" /> Home
-				</NavLink>
+				</NavLink> */}
 				<NavLink
 					className="link"
 					style={({ isActive }) => (isActive ? activeNav : undefined)}
-					to={"/tasks"}>
+					to={"/"}>
 					<FaRegCheckCircle className="link-icon" />
 					My Tasks
 				</NavLink>
